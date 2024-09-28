@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a .NET Developer showcasing projects and skills.">
+    <title>Portfolio - .NET Developer</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .light-mode header {
+            background-color: #fff;
+            color: #1d1d1f;
+        }
+
+        .light-mode .card {
+            background: #fff;
+            color: #1d1d1f;
+        }
+
+        .light-mode .card-content {
+            color: #333;
+        }
+
+        .light-mode footer {
+            background-color: #fff;
+            color: #86868b;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #1d1d1f;
+            color: #f5f5f7;
+        }
+
+        .dark-mode header {
+            background-color: #333;
+            color: #f5f5f7;
+        }
+
+        .dark-mode .card {
+            background: #2c2c2c;
+            color: #f5f5f7;
+        }
+
+        .dark-mode .card-content {
+            color: #ddd;
+        }
+
+        .dark-mode footer {
+            background-color: #333;
+            color: #86868b;
+        }
+
+        /* Dark Mode Toggle Button */
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .toggle-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .toggle-button {
+            color: #fff;
+        }
+
+        .dark-mode .toggle-button:focus {
+            outline: none;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #fff;
+            color: #1d1d1f;
+        }
+
+        header h1 {
+            font-size: 5rem;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        header p {
+            font-size: 1.75rem;
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+
+        /* Card Layout */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px; /* Adjust size as needed */
+            color: inherit;  /* Use current color */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007bff; /* Change color on hover */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                height: auto;
+                max-height: 320px;
+            }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header>
+        <div class="toggle-container">
+            <button class="toggle-button" id="mode-toggle">
+                <i class="fas fa-sun" id="sun-icon"></i>
+                <i class="fas fa-moon" id="moon-icon" style="display: none;"></i>
+            </button>
+        </div>
+        <h1>SAIRAM KODAPARTHI</h1>
+        <p>.NET Developer | Full Stack Developer</p>
+    </header>
+
+    <div class="container">
+        <div class="cards">
+            <!-- About Card -->
+            <div class="card">
+                <i class="fas fa-user card-icon"></i>
+                <div class="card-title">About Me</div>
+                <div class="card-content">
+                    I am a .NET developer with a passion for building clean, scalable solutions. I have experience in ASP.NET, C#, SQL Server, Angular and cloud technologies. My focus is always on delivering quality and efficient code.
+                </div>
+            </div>
+
+            <!-- Skills Card -->
+            <div class="card">
+                <i class="fas fa-cogs card-icon"></i>
+                <div class="card-title">Skills</div>
+                <div class="card-content">
+                    Skilled in ASP.NET Core, C#, Entity Framework, HTML5, CSS3, Angular, and SQL Server. Experienced in developing full-stack applications and RESTful APIs. Proficient in both front-end and back-end development.
+                </div>
+            </div>
+
+            <!-- Projects Card -->
+            <div class="card">
+                <i class="fas fa-project-diagram card-icon"></i>
+                <div class="card-title">Projects</div>
+                <div class="card-content">
+                    Worked on projects like insurance platforms, case management systems, and custom API integrations with secure authentication mechanisms. Experience in agile methodologies and team collaboration.
+                </div>
+            </div>
+
+            <!-- Experience Card -->
+            <div class="card" id="experience-card">
+                <i class="fas fa-briefcase card-icon"></i>
+                <div class="card-title">Experience</div>
+                <div class="card-content" id="experience-content">
+                    Loading experience...
+                </div>
+            </div>
+
+            <!-- Education Card -->
+            <div class="card">
+                <i class="fas fa-graduation-cap card-icon"></i>
+                <div class="card-title">Education</div>
+                <div class="card-content">
+                    Master's Degree in Computer Applications. Completed certification in AWS. Always striving to stay up to date with industry trends.
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="card">
+                <i class="fas fa-envelope card-icon"></i>
+                <div class="card-title">Contact</div>
+                <div class="card-content">
+                    Feel free to reach out at: sairam04.ram@example.com or connect on LinkedIn. Always open to exciting opportunities and collaborations.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sairam. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/yourprofile" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/Sairam62" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sairam-kodaparthi-7032b6136/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mode function
+        const toggleButton = document.getElementById('mode-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const currentMode = localStorage.getItem('mode') || 'light-mode';
+
+        // Apply the stored mode
+        document.body.classList.add(currentMode);
+        updateIcons(currentMode);
+
+        // Toggle mode on button click
+        toggleButton.addEventListener('click', () => {
+            const newMode = document.body.classList.contains('light-mode') ? 'dark-mode' : 'light-mode';
+            document.body.classList.remove('light-mode', 'dark-mode');
+            document.body.classList.add(newMode);
+            localStorage.setItem('mode', newMode);
+            updateIcons(newMode);
+        });
+
+        // Update icons based on mode
+        function updateIcons(mode) {
+            if (mode === 'dark-mode') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+
+        // Dynamic Experience Calculation
+        const startDate = new Date('2020-06-19'); // Replace with your actual start date
+        const currentDate = new Date();
+        const experienceYears = currentDate.getFullYear() - startDate.getFullYear();
+        const experienceMonths = currentDate.getMonth() - startDate.getMonth();
+        
+        let totalExperience = experienceYears;
+
+        if (experienceMonths < 0) {
+            totalExperience--;
+        }
+
+        // Update the experience card content
+        const experienceContent = document.getElementById('experience-content');
+        experienceContent.textContent = `Over ${totalExperience} year${totalExperience !== 1 ? 's' : ''} of experience in software development, working with both small startups and large enterprises. Proven track record in delivering scalable solutions. Expertise in cloud computing with Azure and AWS.`;
+    </script>
+</body>
+</html>
